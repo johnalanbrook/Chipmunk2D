@@ -50,7 +50,7 @@ chipmunk_lib = library('chipmunk2d',
   dependencies: m_dep
 )
 
-dep = declare_dependency(
+chipmunk2d_dep = declare_dependency(
   link_with: chipmunk_lib,
   include_directories : include
 )

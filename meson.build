@@ -3,6 +3,12 @@ project('chipmunk', 'c', version: '7.0.3', license: 'MIT')
 cc = meson.get_compiler('c')
 m_dep = cc.find_library('m', required: false)
 
+if get_option('doubles')
+  add_project_arguments('-DCP_USE_DOUBLES=1', language: 'c')
+else
+  add_project_arguments('-DCP_USE_DOUBLES=0', language: 'c')
+endif
+
 inc = include_directories('include')
 lib = library(
   'chipmunk',
